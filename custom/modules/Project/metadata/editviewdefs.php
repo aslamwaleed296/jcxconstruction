@@ -81,7 +81,12 @@ array(
         4 =>
         array(
           0 => 'account_projects_name',
-          1 => '',
+          1 => 
+          array (
+            'name' => 'record_number',
+            'label' => 'LBL_RECORD_NUMBER',
+            'customCode' => '{$fields.record_number.value}',
+          ),
         ),
       ),
     ),

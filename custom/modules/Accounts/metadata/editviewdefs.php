@@ -138,7 +138,12 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'record_number',
+            'label' => 'LBL_RECORD_NUMBER',
+            'customCode' => '{$fields.record_number.value}',
+          ),
         ),
       ),
       'LBL_PANEL_ADVANCED' => 
