@@ -22,7 +22,7 @@ class jcx_purchase_ordersViewDetail extends ViewDetail
     {
         global $app_list_strings;
 
-        $sql = "SELECT id, name FROM aos_pdf_templates WHERE deleted = 0 AND type='AOS_Invoices' AND active = 1";
+        $sql = "SELECT id, name FROM aos_pdf_templates WHERE deleted = 0 AND type='jcx_purchase_orders' AND active = 1";
 
         $res = $this->bean->db->query($sql);
         $app_list_strings['template_ddown_c_list'] = array();
@@ -35,6 +35,7 @@ class jcx_purchase_ordersViewDetail extends ViewDetail
     {
         global $app_list_strings,$app_strings, $mod_strings;
         $templates = array_keys($app_list_strings['template_ddown_c_list']);
+
         if ($templates) {
             echo '	<div id="popupDiv_ara" style="display:none;position:fixed;top: 39%; left: 41%;opacity:1;z-index:9999;background:#FFFFFF;">
 				<form id="popupForm" action="index.php?entryPoint=generatePdf" method="post">
