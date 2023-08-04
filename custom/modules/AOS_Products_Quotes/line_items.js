@@ -335,36 +335,36 @@ function insertServiceLine(tableid, groupid) {
   a.colSpan = "4";
   a.innerHTML = "<textarea name='service_name[" + servln + "]' id='service_name" + servln + "'  cols='64' title='' tabindex='116' class='service_name'></textarea><input type='hidden' name='service_product_id[" + servln + "]' id='service_product_id" + servln + "'  maxlength='50' value='0'>";
 
-  var a1 = x.insertCell(1);
-  a1.innerHTML = "<input type='text' name='service_product_list_price[" + servln + "]' id='service_product_list_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_list_price'>";
-
-  if (typeof currencyFields !== 'undefined'){
-    currencyFields.push("service_product_list_price" + servln);
-  }
-
-  var a2 = x.insertCell(2);
-  a2.innerHTML = "<input type='text' name='service_product_discount[" + servln + "]' id='service_product_discount" + servln + "'  maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + servln + ",\"service_\");' onblur='calculateLine(" + servln + ",\"service_\");' class='service_discount_text'><input type='hidden' name='service_product_discount_amount[" + servln + "]' id='service_product_discount_amount" + servln + "' value=''/>";
-  a2.innerHTML += "<select tabindex='116' name='service_discount[" + servln + "]' id='service_discount" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_discount_select'>" + discount_hidden + "</select>";
-
-  var b = x.insertCell(3);
-  b.innerHTML = "<input type='text' name='service_product_unit_price[" + servln + "]' id='service_product_unit_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_unit_price'>";
-
-  if (typeof currencyFields !== 'undefined'){
-    currencyFields.push("service_product_unit_price" + servln);
-  }
-
-  var g = x.insertCell(4);
+  var g = x.insertCell(1);
   g.innerHTML = "<input type='text' name='service_supply_price[" + servln + "]' id='service_supply_price" + servln + "' size='30' maxlength='26' value='0.00' title='' tabindex='0'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_supply_price'>";
 
   if (typeof currencyFields !== 'undefined'){
     currencyFields.push("service_supply_price" + servln);
   }
 
-  var h = x.insertCell(5);
+  var h = x.insertCell(2);
   h.innerHTML = "<input type='text' name='service_labor_price[" + servln + "]' id='service_labor_price" + servln + "' size='30' maxlength='26' value='0.00' title='' tabindex='0'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_labor_price'>";
 
   if (typeof currencyFields !== 'undefined'){
     currencyFields.push("service_supply_price" + servln);
+  }
+
+  var a1 = x.insertCell(3);
+  a1.innerHTML = "<input type='text' name='service_product_list_price[" + servln + "]' id='service_product_list_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_list_price'>";
+
+  if (typeof currencyFields !== 'undefined'){
+    currencyFields.push("service_product_list_price" + servln);
+  }
+
+  var a2 = x.insertCell(4);
+  a2.innerHTML = "<input type='text' name='service_product_discount[" + servln + "]' id='service_product_discount" + servln + "'  maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + servln + ",\"service_\");' onblur='calculateLine(" + servln + ",\"service_\");' class='service_discount_text'><input type='hidden' name='service_product_discount_amount[" + servln + "]' id='service_product_discount_amount" + servln + "' value=''/>";
+  a2.innerHTML += "<select tabindex='116' name='service_discount[" + servln + "]' id='service_discount" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_discount_select'>" + discount_hidden + "</select>";
+
+  var b = x.insertCell(5);
+  b.innerHTML = "<input type='text' name='service_product_unit_price[" + servln + "]' id='service_product_unit_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_unit_price'>";
+
+  if (typeof currencyFields !== 'undefined'){
+    currencyFields.push("service_product_unit_price" + servln);
   }
 
   var c = x.insertCell(6);
@@ -462,25 +462,25 @@ function insertServiceHeader(tableid){
   a.style.color="rgb(68,68,68)";
   a.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_NAME');
 
-  var b=x.insertCell(1);
-  b.style.color="rgb(68,68,68)";
-  b.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_LIST_PRICE');
-
-  var c=x.insertCell(2);
-  c.style.color="rgb(68,68,68)";
-  c.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_DISCOUNT');
-
-  var d=x.insertCell(3);
-  d.style.color="rgb(68,68,68)";
-  d.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_PRICE');
-
-  var h=x.insertCell(4);
+  var h=x.insertCell(1);
   h.style.color="rgb(68,68,68)";
   h.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SUPPLY_PRICE');
 
-  var i=x.insertCell(5);
+  var i=x.insertCell(2);
   i.style.color="rgb(68,68,68)";
   i.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_LABOR_PRICE');
+
+  var b=x.insertCell(3);
+  b.style.color="rgb(68,68,68)";
+  b.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_LIST_PRICE');
+
+  var c=x.insertCell(4);
+  c.style.color="rgb(68,68,68)";
+  c.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_DISCOUNT');
+
+  var d=x.insertCell(5);
+  d.style.color="rgb(68,68,68)";
+  d.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_PRICE');
 
   var e=x.insertCell(6);
   e.style.color="rgb(68,68,68)";
@@ -678,12 +678,34 @@ function calculateLine(ln, key){
     required = 'product_unit_price';
   }
 
-  if (document.getElementById(key + 'name' + ln).value === '' || document.getElementById(key + required + ln).value === ''){
+  if (document.getElementById(key + 'name' + ln).value === ''){
     return;
+  }
+
+  if (key !== 'service_') {
+    if (document.getElementById(key + required + ln).value === ''){
+      return;
+    }
   }
 
   if(key === "product_" && document.getElementById(key + 'product_qty' + ln) !== null && document.getElementById(key + 'product_qty' + ln).value === ''){
     document.getElementById(key + 'product_qty' + ln).value =1;
+  }
+
+  if (key == 'service_') {
+    var list_price = 0;
+
+    if(document.getElementById(key + 'supply_price' + ln) !== null){
+      var supplyPrice = get_value(key + 'supply_price' + ln);
+      list_price = list_price + supplyPrice;
+    }
+  
+    if(document.getElementById(key + 'labor_price' + ln) !== null){
+      var laborPrice = get_value(key + 'labor_price' + ln);
+      list_price = list_price + laborPrice;
+    }
+  
+    document.getElementById(key + 'product_list_price' + ln).value = format2Number(list_price);
   }
 
   var productUnitPrice = unformat2Number(document.getElementById(key + 'product_unit_price' + ln).value);
@@ -720,6 +742,7 @@ function calculateLine(ln, key){
       document.getElementById(key + 'product_discount' + ln).value = '';
       discount = 0;
     }
+
     document.getElementById(key + 'product_list_price' + ln).value = format2Number(listPrice);
     //document.getElementById(key + 'product_discount' + ln).value = format2Number(unformat2Number(document.getElementById(key + 'product_discount' + ln).value));
     document.getElementById(key + 'product_discount_amount' + ln).value = format2Number(-discount, 6);
@@ -744,16 +767,6 @@ function calculateLine(ln, key){
   }
 
   document.getElementById(key + 'vat_amt' + ln).value = format2Number(totalvat);
-
-  if(document.getElementById(key + 'supply_price' + ln) !== null){
-    var supplyPrice = get_value(key + 'supply_price' + ln);
-    productTotalPrice = productTotalPrice + supplyPrice;
-  }
-
-  if(document.getElementById(key + 'labor_price' + ln) !== null){
-    var laborPrice = get_value(key + 'labor_price' + ln);
-    productTotalPrice = productTotalPrice + laborPrice;
-  }
 
   document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
   document.getElementById(key + 'product_total_price' + ln).value = format2Number(productTotalPrice);
@@ -796,8 +809,6 @@ function calculateTotal(key)
   var subtotal = 0;
   var dis_tot = 0;
   var tax = 0;
-  var totalSupplyPrice = 0;
-  var totalLaborPrice = 0;
 
   for (i=0; i < length; i++) {
     var qty = 1;
@@ -806,8 +817,6 @@ function calculateTotal(key)
     var deleted = 0;
     var dis_amt = 0;
     var product_vat_amt = 0;
-    var supply = 0;
-    var labor = 0;
 
     var input = row[i].getElementsByTagName('input');
     for (j=0; j < input.length; j++) {
@@ -825,14 +834,6 @@ function calculateTotal(key)
       if (input[j].id.indexOf('product_discount_amount') != -1)
       {
         dis_amt = unformat2Number(input[j].value);
-      }
-      if (input[j].id.indexOf('supply_price') != -1)
-      {
-        supply = unformat2Number(input[j].value);
-      }
-      if (input[j].id.indexOf('labor_price') != -1)
-      {
-        labor = unformat2Number(input[j].value);
       }
       if (input[j].id.indexOf('vat_amt') != -1)
       {
@@ -855,14 +856,6 @@ function calculateTotal(key)
     } else if (qty !== 0 && unit !== 0 && deleted != 1) {
       tot_amt += unit * qty;
     } 
-    
-    if (supply !== 0 && deleted != 1) {
-      totalSupplyPrice += supply;
-    } 
-    
-    if (labor !== 0 && deleted != 1) {
-      totalLaborPrice += labor;
-    }
 
     if (dis_amt !== 0 && deleted != 1) {
       dis_tot += dis_amt * qty;
@@ -878,7 +871,6 @@ function calculateTotal(key)
     }
   }
 
-  tot_amt = tot_amt + unformat2Number(totalSupplyPrice) + unformat2Number(totalLaborPrice);
   subtotal = unformat2Number(tot_amt) + unformat2Number(dis_tot);
 
   set_value(key+'total_amt',tot_amt);
